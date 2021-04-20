@@ -89,11 +89,11 @@ bool isValid(int number, int base) {
 
 int getNumber(int base, char title[]){
     int number;
-    printf("Por favor, ingresa un numero %s /n", title);
+    printf("Por favor, ingresa un numero %s \n", title);
     do{                
         scanf("%i", &number);
         if(!isValid(number, base)){
-            printf("ERROR, ingresa un numero %s /n", title);
+            printf("ERROR, ingresa un numero %s \n", title);
         }
     } while(!isValid(number, base));
     return number;
@@ -104,21 +104,21 @@ int main(int argc, char **argv){
     int baseInput = 0, baseOutput = 0;
 
     if(argc < 2){
-        printf("Por favor, ingresa 2 bases. /n");
+        printf("Por favor, ingresa 2 bases. \n");
         return 0;
     }
 
     sscanf(argv[1], "%i", &baseInput);
     sscanf(argv[2], "%i", &baseOutput);
     if(baseInput == baseOutput){
-        printf("Por favor, ingresa 2 bases distintas. /n");
+        printf("Por favor, ingresa 2 bases distintas. \n");
         return 0;
     }
 
     switch (baseInput){
         case 10:
             if(baseOutput != 8 && baseOutput != 2){
-                printf("Par de bases no disponible. /n");
+                printf("Par de bases no disponible. \n");
                 return 0;
             }
 
@@ -136,7 +136,7 @@ int main(int argc, char **argv){
 
         case 8:
             if(baseOutput != 10 && baseOutput != 2){
-                printf("Par de bases no disponible. /n");
+                printf("Par de bases no disponible. \n");
                 return 0;
             }
 
@@ -149,7 +149,7 @@ int main(int argc, char **argv){
         
         case 2:
             if(baseOutput != 10 && baseOutput != 8){
-                printf("Par de bases no disponible. /n");
+                printf("Par de bases no disponible. \n");
                 return 0;
             }
 
@@ -161,7 +161,7 @@ int main(int argc, char **argv){
             break;
         
         default:
-            printf("Base de entrada no disponible. /n");
+            printf("Base de entrada no disponible. \n");
             return 0;
             break;
     }
